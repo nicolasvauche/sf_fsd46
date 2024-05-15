@@ -1,3 +1,8 @@
+/* GLOBALS */
+.success {
+    color: forestgreen;
+}
+
 body {
     background-color: aliceblue;
 }

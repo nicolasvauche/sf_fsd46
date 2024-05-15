@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/cake', name: 'app_cake_default')]
+    #[Route('/gateau', name: 'app_cake_default')]
     public function index(CakeRepository $cakeRepository): Response
     {
         $cakes = $cakeRepository->findAll();
