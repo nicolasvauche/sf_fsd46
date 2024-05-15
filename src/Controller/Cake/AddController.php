@@ -35,6 +35,8 @@ class AddController extends AbstractController
             $entityManager->persist($cake);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Votre gâteau a bien été ajouté !');
+
             return $this->redirectToRoute('app_cake_default');
         }
 

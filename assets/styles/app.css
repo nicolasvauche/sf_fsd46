@@ -3,6 +3,10 @@
     color: forestgreen;
 }
 
+img {
+    max-width: 100%;
+}
+
 body {
     background-color: aliceblue;
 }
@@ -49,4 +53,15 @@ nav a .icon {
     text-align: center;
     border: 2px solid black;
     border-radius: 0.25rem;
+}
+
+.alert {
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.alert.success {
+    color: white;
+    background-color: forestgreen;
 }
