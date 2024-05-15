@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CakeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: CakeRepository::class)]
 class Cake
@@ -23,7 +24,12 @@ class Cake
     private ?bool $active = null;
 
     #[ORM\Column]
+    #[Gedmo\Timestampable(on: "create")]
     private ?\DateTimeImmutable $createdAt = null;
+
+    #[ORM\Column(length: 255)]
+    #[Gedmo\Slug(fields: ["name"])]
+    private ?string $slug = null;
 
     public function getId(): ?int
     {
@@ -74,6 +80,18 @@ class Cake
     public function setCreatedAt(\DateTimeImmutable $createdAt): static
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }
