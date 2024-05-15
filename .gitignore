@@ -1,3 +1,9 @@
+###> sf_fsd46/local ###
+.DS_Store
+thumbs.db
+.vscode/
+.idea/
+###< sf_fsd46/local ###
 
 ###> symfony/framework-bundle ###
 /.env.local
