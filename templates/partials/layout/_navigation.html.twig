@@ -4,9 +4,16 @@
         {{ ux_icon('ph:house-line', {'class': 'icon'}) }}
         Accueil
     </a>
+
     <a href="{{ path('app_contact') }}"
        {% if app.request.get('_route') == 'app_contact' %}class="active"{% endif %}>
         {{ ux_icon('lucide:mail', {'class': 'icon'}) }}
         Contact
+    </a>
+
+    <a href="{{ path('app_cake_default') }}"
+       {% if app.request.get('_route') == 'app_cake_default' %}class="active"{% endif %}>
+        {{ ux_icon('game-icons:pie-slice', {'class': 'icon'}) }}
+        Gâteaux
     </a>
 </nav>

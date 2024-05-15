@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous les Gâteaux{% endblock %}
+
+{% block body %}
+    <h1>Les Gâteaux</h1>
+
+    <div class="grid">
+        {% for cake in cakes %}
+            <div class="grid-item">
+                <img src="{{ asset('uploads/cake/' ~ cake.image) }}" alt="{{ cake.name }}"/>
+                <h2>{{ cake.name }}</h2>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
