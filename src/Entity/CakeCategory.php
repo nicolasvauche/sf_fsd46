@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\CakeCategoryRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -27,6 +29,17 @@ class CakeCategory
 
     #[ORM\Column]
     private ?bool $active = null;
+
+    /**
+     * @var Collection<int, Cake>
+     */
+    #[ORM\OneToMany(targetEntity: Cake::class, mappedBy: 'category')]
+    private Collection $cakes;
+
+    public function __construct()
+    {
+        $this->cakes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -65,6 +78,36 @@ class CakeCategory
     public function setActive(bool $active): static
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Cake>
+     */
+    public function getCakes(): Collection
+    {
+        return $this->cakes;
+    }
+
+    public function addCake(Cake $cake): static
+    {
+        if (!$this->cakes->contains($cake)) {
+            $this->cakes->add($cake);
+            $cake->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCake(Cake $cake): static
+    {
+        if ($this->cakes->removeElement($cake)) {
+            // set the owning side to null (unless already changed)
+            if ($cake->getCategory() === $this) {
+                $cake->setCategory(null);
+            }
+        }
 
         return $this;
     }

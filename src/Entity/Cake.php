@@ -35,6 +35,10 @@ class Cake
     #[Gedmo\Slug(fields: ["name"])]
     private ?string $slug = null;
 
+    #[ORM\ManyToOne(inversedBy: 'cakes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?CakeCategory $category = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -96,6 +100,18 @@ class Cake
     public function setSlug(string $slug): static
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    public function getCategory(): ?CakeCategory
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?CakeCategory $category): static
+    {
+        $this->category = $category;
 
         return $this;
     }
