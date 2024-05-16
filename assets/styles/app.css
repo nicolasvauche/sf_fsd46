@@ -115,6 +115,6 @@ nav a .icon {
 }
 
 .alert.success {
-    color: white;
+    color: white !important;
     background-color: forestgreen;
 }

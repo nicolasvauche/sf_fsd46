@@ -3,7 +3,12 @@
 {% block title %}Nouveau Gâteau{% endblock %}
 
 {% block body %}
-    <h1>Ajouter un Gâteau</h1>
+    <a href="{{ path('app_cake_default') }}">
+        {{ ux_icon('icon-park-outline:back', {'class': 'icon'}) }}
+        Retour aux gâteaux
+    </a>
+    <hr/>
 
+    <h1>Ajouter un Gâteau</h1>
     {%  include 'cake/partials/_form.html.twig' %}
 {% endblock %}
