@@ -1,10 +1,22 @@
 /* GLOBALS */
 .success {
-    color: forestgreen;
+    color: forestgreen !important;
+}
+
+.info {
+    color: cornflowerblue !important;
+}
+
+.danger {
+    color: crimson !important;
 }
 
 img {
     max-width: 100%;
+}
+
+a {
+    color: lightseagreen;
 }
 
 body {
@@ -49,10 +61,43 @@ nav a .icon {
 }
 
 .grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 1rem;
     text-align: center;
     border: 2px solid black;
     border-radius: 0.25rem;
+}
+
+.grid-item .body a {
+    display: block;
+    text-decoration: none;
+}
+
+.grid-item .body img,
+.grid-item .body svg {
+    height: 24dvh;
+}
+
+.grid-item .body img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.grid-item footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid-item footer .btn {
+    flex: 1;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .alert {

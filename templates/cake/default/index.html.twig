@@ -8,16 +8,29 @@
     <div class="grid">
         {% for cake in cakes %}
             <div class="grid-item">
-                <img src="{{ asset('uploads/cake/' ~ cake.image) }}" alt="{{ cake.name }}"/>
-                <h2>{{ cake.name }}</h2>
+                <div class="body">
+                    <a href="#">
+                        <img src="{{ asset('uploads/cake/' ~ cake.image) }}" alt="{{ cake.name }}"/>
+                        <h2>{{ cake.name }}</h2>
+                    </a>
+                </div>
+                <footer>
+                    <a href="/gateau/details/{{ cake.slug }}" class="btn">détails</a>
+                    <a href="#" class="info btn">modifier</a>
+                    <a href="#" class="danger btn">supprimer</a>
+                </footer>
             </div>
         {% endfor %}
 
         <div class="grid-item">
-            <a href="{{ path('app_cake_add') }}" class="success">
-                {{ ux_icon('icons8:plus', {'class': 'icon'}) }}
-                Nouveau Gâteau
-            </a>
+            <div class="body">
+                <a href="{{ path('app_cake_add') }}" class="success">
+                    {{ ux_icon('icons8:plus', {'class': 'icon success'}) }}
+                </a>
+            </div>
+            <footer>
+                <a href="{{ path('app_cake_add') }}" class="success btn">nouveau</a>
+            </footer>
         </div>
     </div>
 {% endblock %}
