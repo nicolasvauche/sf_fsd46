@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class CakeType extends AbstractType
 {
@@ -23,6 +24,18 @@ class CakeType extends AbstractType
                 'label' => 'Image du gâteau',
                 'required' => false,
                 'mapped' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/webp',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez choisir un fichier image : JPG, PNG ou WebP',
+                        'maxSizeMessage' => 'Votre fichier est trop gros !',
+                    ]),
+                ],
             ])
             ->add('active', CheckboxType::class, [
                 'label' => 'Afficher le gâteau',

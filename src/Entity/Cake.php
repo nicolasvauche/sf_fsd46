@@ -5,8 +5,11 @@ namespace App\Entity;
 use App\Repository\CakeRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: CakeRepository::class)]
+#[UniqueEntity(fields: ['name'], message: 'Ce gâteau existe déjà !')]
 class Cake
 {
     #[ORM\Id]
@@ -15,6 +18,7 @@ class Cake
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le nom est obligatoire')]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]
