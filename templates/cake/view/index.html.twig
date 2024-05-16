@@ -3,6 +3,12 @@
 {% block title %}{{ cake.name }}{% endblock %}
 
 {% block body %}
+    <a href="{{ path('app_cake_default') }}">
+        {{ ux_icon('icon-park-outline:back', {'class': 'icon'}) }}
+        Retour aux gâteaux
+    </a>
+    <hr/>
+
     <h1>{{ cake.name }}</h1>
     <img src="{{ asset('uploads/cake/' ~ cake.image) }}" alt="{{ cake.name }}"/>
 {% endblock %}

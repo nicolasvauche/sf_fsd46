@@ -16,7 +16,14 @@ img {
 }
 
 a {
+    font-weight: bold;
+    text-decoration: none;
     color: lightseagreen;
+}
+
+.icon {
+    width: 1.5rem;
+    vertical-align: bottom;
 }
 
 body {
@@ -25,6 +32,7 @@ body {
 
 nav {
     padding: 1rem;
+    margin-bottom: 1rem;
     background-color: bisque;
     border-left: 0.25rem solid black;
     border-bottom: 0.25rem solid black;
@@ -51,7 +59,6 @@ nav a.active {
 
 nav a .icon {
     width: 2rem;
-    vertical-align: bottom;
 }
 
 .grid {
@@ -76,7 +83,8 @@ nav a .icon {
 }
 
 .grid-item .body img,
-.grid-item .body svg {
+.grid-item .body .icon {
+    width: auto;
     height: 24dvh;
 }
 

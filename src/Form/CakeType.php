@@ -22,6 +22,7 @@ class CakeType extends AbstractType
             ->add('image', FileType::class, [
                 'label' => 'Image du gâteau',
                 'required' => false,
+                'mapped' => false,
             ])
             ->add('active', CheckboxType::class, [
                 'label' => 'Afficher le gâteau',

@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un Gâteau : {{ cake.name }}{% endblock %}
+
+{% block body %}
+    <h1>Modifier un Gâteau : {{ cake.name }}</h1>
+
+    {% include 'cake/partials/_form.html.twig' %}
+{% endblock %}

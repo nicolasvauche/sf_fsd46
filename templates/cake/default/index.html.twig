@@ -9,14 +9,14 @@
         {% for cake in cakes %}
             <div class="grid-item">
                 <div class="body">
-                    <a href="#">
+                    <a href="{{ path('app_cake_view', {'slug': cake.slug}) }}">
                         <img src="{{ asset('uploads/cake/' ~ cake.image) }}" alt="{{ cake.name }}"/>
                         <h2>{{ cake.name }}</h2>
                     </a>
                 </div>
                 <footer>
-                    <a href="/gateau/details/{{ cake.slug }}" class="btn">détails</a>
-                    <a href="#" class="info btn">modifier</a>
+                    <a href="{{ path('app_cake_view', {'slug': cake.slug}) }}" class="btn">détails</a>
+                    <a href="{{ path('app_cake_edit', {'slug': cake.slug}) }}" class="info btn">modifier</a>
                     <a href="#" class="danger btn">supprimer</a>
                 </footer>
             </div>
