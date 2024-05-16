@@ -12,10 +12,8 @@ class DefaultController extends AbstractController
     #[Route('/gateau', name: 'app_cake_default')]
     public function index(CakeRepository $cakeRepository): Response
     {
-        $cakes = $cakeRepository->findAll();
-
         return $this->render('cake/default/index.html.twig', [
-            'cakes' => $cakes,
+            'cakes' => $cakeRepository->findAll(),
         ]);
     }
 }

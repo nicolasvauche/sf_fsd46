@@ -18,7 +18,7 @@ class Cake
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    #[Assert\NotBlank(message: 'Le nom est obligatoire')]
+    #[Assert\NotBlank(message: 'Le nom du gâteau est obligatoire !')]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]

@@ -98,13 +98,14 @@ nav a .icon {
 .grid-item .body img,
 .grid-item .body .icon {
     width: auto;
-    height: 24dvh;
+    height: 20dvh;
 }
 
 .grid-item .body img {
     display: block;
     width: 100%;
     object-fit: cover;
+    border-radius: 0.25rem;
 }
 
 .grid-item footer {

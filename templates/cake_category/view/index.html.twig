@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ cake_category.name }}{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_cake_category_default_index') }}">
+        {{ ux_icon('tabler:brand-cakephp', {'class': 'icon'}) }}
+        Retour aux catégories
+    </a>
+    <hr/>
+
+    <h1>{{ cake_category.name }}</h1>
+
+    {#<h2>Les Gâteaux</h2>
+    {% include 'cake/partials/_grid.html.twig' %}#}
+{% endblock %}
