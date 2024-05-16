@@ -6,7 +6,6 @@ use App\Entity\Cake;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -19,11 +18,19 @@ class CakeType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom du gâteau',
+                'required' => false,
+                'attr' => [
+                    'autofocus' => true,
+                    'class' => 'form-control',
+                ],
             ])
             ->add('image', FileType::class, [
                 'label' => 'Image du gâteau',
                 'required' => false,
                 'mapped' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
                 'constraints' => [
                     new File([
                         'maxSize' => '1024k',
@@ -40,9 +47,9 @@ class CakeType extends AbstractType
             ->add('active', CheckboxType::class, [
                 'label' => 'Afficher le gâteau',
                 'required' => false,
-            ])
-            ->add('save', SubmitType::class, [
-                'label' => 'Enregistrer',
+                'attr' => [
+                    'class' => 'form-control',
+                ],
             ]);
     }
 

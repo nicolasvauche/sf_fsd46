@@ -10,5 +10,5 @@
     <hr/>
 
     <h1>Modifier un Gâteau : {{ cake.name }}</h1>
-    {% include 'cake/partials/_form.html.twig' %}
+    {% include 'cake/partials/_form.html.twig' with {'button_label': 'Modifier'} %}
 {% endblock %}
