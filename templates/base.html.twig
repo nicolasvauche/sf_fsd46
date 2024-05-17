@@ -18,10 +18,14 @@
     </head>
 
     <body data-turbo="false">
-        {% include 'partials/layout/_navigation.html.twig' %}
+        <header>
+            {% include 'partials/layout/_navigation.html.twig' %}
+        </header>
 
-        {% include 'partials/layout/_alert.html.twig' %}
+        <main>
+            {% include 'partials/layout/_alert.html.twig' %}
 
-        {% block body %}{% endblock %}
+            {% block body %}{% endblock %}
+        </main>
     </body>
 </html>
