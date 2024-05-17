@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ cake_category.name }}{% endblock %}
+{% block title %}Nouvelle Catégorie de Gâteaux{% endblock %}
 
 {% block body %}
     <a href="{{ path('app_cake_category_default_index') }}">
@@ -9,8 +9,6 @@
     </a>
     <hr/>
 
-    <h1>{{ cake_category.name }}</h1>
-
-    {#<h2>Les Gâteaux</h2>
-    {% include 'cake/partials/_grid.html.twig' %}#}
+    <h1>Ajouter une Catégorie de Gâteaux</h1>
+    {% include 'cake_category/partials/_form.html.twig' %}
 {% endblock %}

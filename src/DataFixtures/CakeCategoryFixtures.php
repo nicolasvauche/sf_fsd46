@@ -12,22 +12,22 @@ class CakeCategoryFixtures extends Fixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager): void
     {
         $cakeCategory = (new CakeCategory())
-            ->setName('Gâteaux à la crème')
+            ->setName('Creme Cakes')
             ->setActive(true);
         $manager->persist($cakeCategory);
         $this->addReference('cake-category-creme', $cakeCategory);
 
         $cakeCategory = (new CakeCategory())
-            ->setName('Gâteaux au chocolat')
+            ->setName('Chocolate Cakes')
             ->setActive(true);
         $manager->persist($cakeCategory);
-        $this->addReference('cake-category-chocolat', $cakeCategory);
+        $this->addReference('cake-category-chocolate', $cakeCategory);
 
         $cakeCategory = (new CakeCategory())
-            ->setName('Gâteaux divers')
+            ->setName('Misc Cakes')
             ->setActive(true);
         $manager->persist($cakeCategory);
-        $this->addReference('cake-category-divers', $cakeCategory);
+        $this->addReference('cake-category-misc', $cakeCategory);
 
         $manager->flush();
     }

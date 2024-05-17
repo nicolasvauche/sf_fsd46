@@ -24,7 +24,7 @@
                     <td>{{ cake_category.active ? 'Yes' : 'No' }}</td>
                     <td>
                         <a href="{{ path('app_cake_category_view', {'slug': cake_category.slug}) }}">show</a>
-                        <a href="{{ path('app_cake_category_default_edit', {'id': cake_category.id}) }}">edit</a>
+                        <a href="{{ path('app_cake_category_edit', {'slug': cake_category.slug}) }}">edit</a>
                     </td>
                 </tr>
             {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_cake_category_default_new') }}">Create new</a>
+    <a href="{{ path('app_cake_category_add') }}">Create new</a>
 {% endblock %}

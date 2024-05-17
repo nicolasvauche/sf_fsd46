@@ -28,7 +28,7 @@ class CakeFixtures extends Fixture implements OrderedFixtureInterface
         $manager->persist($cake);
 
         $cake = (new Cake())
-            ->setCategory($this->getReference('cake-category-chocolat'))
+            ->setCategory($this->getReference('cake-category-chocolate'))
             ->setName('Owl Cake')
             ->setImage(strtolower($this->slugger->slug('Owl Cake')) . '.jpg')
             ->setActive(true)
@@ -36,7 +36,7 @@ class CakeFixtures extends Fixture implements OrderedFixtureInterface
         $manager->persist($cake);
 
         $cake = (new Cake())
-            ->setCategory($this->getReference('cake-category-divers'))
+            ->setCategory($this->getReference('cake-category-misc'))
             ->setName('Bunny Cake')
             ->setImage(strtolower($this->slugger->slug('Bunny Cake')) . '.jpg')
             ->setActive(true)
@@ -52,7 +52,7 @@ class CakeFixtures extends Fixture implements OrderedFixtureInterface
         $manager->persist($cake);
 
         $cake = (new Cake())
-            ->setCategory($this->getReference('cake-category-chocolat'))
+            ->setCategory($this->getReference('cake-category-chocolate'))
             ->setName('Ladybird Cake')
             ->setImage(strtolower($this->slugger->slug('Ladybird Cake')) . '.jpg')
             ->setActive(true)
@@ -60,7 +60,7 @@ class CakeFixtures extends Fixture implements OrderedFixtureInterface
         $manager->persist($cake);
 
         $cake = (new Cake())
-            ->setCategory($this->getReference('cake-category-divers'))
+            ->setCategory($this->getReference('cake-category-misc'))
             ->setName('Poison Cake')
             ->setImage(strtolower($this->slugger->slug('Poison Cake')) . '.jpg')
             ->setActive(true)
