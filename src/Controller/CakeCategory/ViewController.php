@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class ViewController extends AbstractController
 {
-    #[Route('/categorie-de-gateaux/details/{slug}', name: 'app_cake_category_view')]
+    #[Route('/categorie-de-gateaux/details/{slug}', name: 'app_cakecategory_view')]
     public function index(CakeCategory $cakeCategory): Response
     {
         return $this->render('cake_category/view/index.html.twig', [

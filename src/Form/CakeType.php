@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Cake;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
@@ -18,7 +19,6 @@ class CakeType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'label' => 'Nom du gâteau',
-                'required' => false,
                 'attr' => [
                     'autofocus' => true,
                     'class' => 'form-control',
@@ -47,6 +47,15 @@ class CakeType extends AbstractType
             ->add('active', CheckboxType::class, [
                 'label' => 'Afficher le gâteau',
                 'required' => false,
+                'attr' => [
+                    'class' => 'form-control',
+                ],
+            ])
+            ->add('category', EntityType::class, [
+                'label' => 'Catégorie associée',
+                'class' => 'App\Entity\CakeCategory',
+                'choice_label' => 'name',
+                'placeholder' => 'Choisissez une catégorie',
                 'attr' => [
                     'class' => 'form-control',
                 ],

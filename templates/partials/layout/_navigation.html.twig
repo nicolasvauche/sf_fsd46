@@ -11,14 +11,14 @@
         Contact
     </a>
 
-    <a href="{{ path('app_cake_category_default_index') }}"
-       {% if app.request.get('_route') == 'app_cake_category_default_index' %}class="active"{% endif %}>
+    <a href="{{ path('app_cakecategory_default_index') }}"
+       {% if 'app_cakecategory_' in app.request.get('_route') %}class="active"{% endif %}>
         {{ ux_icon('tabler:brand-cakephp', {'class': 'icon'}) }}
         Catégories de Gâteaux
     </a>
 
     <a href="{{ path('app_cake_default') }}"
-       {% if app.request.get('_route') == 'app_cake_default' %}class="active"{% endif %}>
+       {% if 'app_cake_' in app.request.get('_route') %}class="active"{% endif %}>
         {{ ux_icon('game-icons:pie-slice', {'class': 'icon'}) }}
         Gâteaux
     </a>

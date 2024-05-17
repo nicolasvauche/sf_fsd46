@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class AddController extends AbstractController
 {
-    #[Route('/categorie-de-gateaux/nouvelle', name: 'app_cake_category_add')]
+    #[Route('/categorie-de-gateaux/nouvelle', name: 'app_cakecategory_add')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $cakeCategory = (new CakeCategory())
@@ -28,7 +28,7 @@ class AddController extends AbstractController
 
             $this->addFlash('success', 'Votre catégorie de gâteaux a bien été ajoutée !');
 
-            return $this->redirectToRoute('app_cake_category_default_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_cakecategory_default_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('cake_category/add/index.html.twig', [

@@ -23,8 +23,8 @@
                     <td>{{ cake_category.slug }}</td>
                     <td>{{ cake_category.active ? 'Yes' : 'No' }}</td>
                     <td>
-                        <a href="{{ path('app_cake_category_view', {'slug': cake_category.slug}) }}">show</a>
-                        <a href="{{ path('app_cake_category_edit', {'slug': cake_category.slug}) }}">edit</a>
+                        <a href="{{ path('app_cakecategory_view', {'slug': cake_category.slug}) }}">show</a>
+                        <a href="{{ path('app_cakecategory_edit', {'slug': cake_category.slug}) }}">edit</a>
                     </td>
                 </tr>
             {% else %}
@@ -35,5 +35,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_cake_category_add') }}">Create new</a>
+    <a href="{{ path('app_cakecategory_add') }}">Create new</a>
 {% endblock %}

@@ -10,5 +10,6 @@
     <hr/>
 
     <h1>{{ cake.name }}</h1>
+    <h2>{{ cake.category.name }}</h2>
     <img src="{{ asset('uploads/cake/' ~ cake.image) }}" alt="{{ cake.name }}"/>
 {% endblock %}

@@ -3,6 +3,12 @@
     <legend>Les infos de votre Gâteau</legend>
 
     <div class="form-group">
+        {{ form_label(form.category) }}
+        {{ form_widget(form.category) }}
+        {{ form_errors(form.category) }}
+    </div>
+
+    <div class="form-group">
         {{ form_label(form.name) }}
         {{ form_widget(form.name) }}
         {{ form_errors(form.name) }}

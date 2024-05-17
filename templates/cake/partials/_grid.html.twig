@@ -4,6 +4,7 @@
             <a href="{{ path('app_cake_view', {'slug': cake.slug}) }}">
                 <img src="{{ asset('uploads/cake/' ~ cake.image) }}" alt="{{ cake.name }}"/>
                 <h2>{{ cake.name }}</h2>
+                <h3>{{ cake.category.name }}</h3>
             </a>
         </div>
         <footer>
