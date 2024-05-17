@@ -161,6 +161,14 @@ legend {
     margin-bottom: 1.5rem;
 }
 
+.form-group:has(textarea) {
+    align-items: flex-start;
+}
+
+.form-group:has(textarea) label {
+    margin-top: 0.25rem;
+}
+
 label {
     flex: 1;
     font-weight: bold;
