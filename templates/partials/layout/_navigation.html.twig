@@ -22,4 +22,18 @@
         {{ ux_icon('game-icons:pie-slice', {'class': 'icon'}) }}
         Gâteaux
     </a>
+
+    {% if not app.user %}
+        <a href="{{ path('app_login') }}"
+           class="login {% if app.request.get('_route') == 'app_login' %}active{% endif %}">
+            {{ ux_icon('material-symbols:login', {'class': 'icon'}) }}
+            Connexion
+        </a>
+    {% else %}
+        <a href="{{ path('app_logout') }}" class="login"
+           onclick="return window.confirm('Vous partez déjà ?')">
+            {{ ux_icon('mdi:exit-run', {'class': 'icon'}) }}
+            Déconnexion
+        </a>
+    {% endif %}
 </nav>

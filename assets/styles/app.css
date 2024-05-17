@@ -39,6 +39,23 @@ a {
     cursor: pointer;
 }
 
+.alert {
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 0.25rem;
+}
+
+.alert.success {
+    color: white !important;
+    background-color: forestgreen;
+}
+
+.alert.danger {
+    color: white !important;
+    background-color: crimson;
+}
+
 body {
     margin: 0;
     background-color: aliceblue;
@@ -79,6 +96,10 @@ nav a.active {
 
 nav a .icon {
     width: 2rem;
+}
+
+nav a.login {
+    float: right;
 }
 
 body > main {
@@ -124,17 +145,6 @@ body > main {
     align-items: center;
     gap: 0.25rem;
     justify-content: space-between;
-}
-
-.alert {
-    padding: 1rem;
-    font-weight: bold;
-    text-align: center;
-}
-
-.alert.success {
-    color: white !important;
-    background-color: forestgreen;
 }
 
 form {
