@@ -9,11 +9,13 @@
         </div>
         <footer>
             <a href="{{ path('app_cake_view', {'slug': cake.slug}) }}" class="btn">détails</a>
-            <a href="{{ path('app_cake_edit', {'slug': cake.slug}) }}" class="info btn">modifier</a>
-            <a href="{{ path('app_cake_delete', {'id': cake.id}) }}" class="danger btn"
-               onclick="return window.confirm('Êtes-vous sûr de vouloir supprimer ce gâteau ?')">
-                supprimer
-            </a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('app_cake_edit', {'slug': cake.slug}) }}" class="info btn">modifier</a>
+                <a href="{{ path('app_cake_delete', {'id': cake.id}) }}" class="danger btn"
+                   onclick="return window.confirm('Êtes-vous sûr de vouloir supprimer ce gâteau ?')">
+                    supprimer
+                </a>
+            {% endif %}
         </footer>
     </div>
 {% endfor %}
