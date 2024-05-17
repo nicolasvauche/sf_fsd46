@@ -27,6 +27,13 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
             ->setCreatedAt(new \DateTimeImmutable());
         $manager->persist($user);
 
+        $user = new User();
+        $user->setEmail('user@user.com')
+            ->setPassword($this->passwordHasher->hashPassword($user, 'user'))
+            ->setActive(true)
+            ->setCreatedAt(new \DateTimeImmutable());
+        $manager->persist($user);
+
         $manager->flush();
     }
 
